@@ -1,5 +1,4 @@
 package com.dayet.spark;
-import breeze.linalg.NumericOps;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;

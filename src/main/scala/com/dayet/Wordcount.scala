@@ -9,6 +9,5 @@ object Wordcount {
     sc.textFile("/1.txt").flatMap(_.split(","))
       .map((_,1)).reduceByKey(_+_).sortBy(_._2,false).foreach(println)
     sc.stop()
-    new KMeans()
   }
 }
