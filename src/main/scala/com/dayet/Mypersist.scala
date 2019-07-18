@@ -13,7 +13,9 @@ object Mypersist {
     val conf = new SparkConf().setAppName("chche").setMaster("local[1]")
     val sc = new SparkContext()
     val rdd = sc.textFile("F:\\voice2018-12_trans.json")
+    sc.setCheckpointDir("hdfs://11.11.:8020/aaa")
     rdd.cache()
+    rdd.checkpoint()
     //
     rdd.persist(StorageLevel.MEMORY_ONLY)
     //这个RDD将会在磁盘中执行
@@ -30,6 +32,4 @@ object Mypersist {
     print("count = "+result2+" ,time = "+(endtime1-starttime1)+" ")
     sc.stop()
   }
-  }
-
 }
