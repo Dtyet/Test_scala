@@ -118,6 +118,12 @@
             <artifactId>hbase-client</artifactId>
             <version>2.1.0-cdh6.2.0</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.flume/flume-ng-core -->
+        <dependency>
+            <groupId>org.apache.flume</groupId>
+            <artifactId>flume-ng-core</artifactId>
+            <version>1.9.0-cdh6.2.0</version>
+        </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka -->
         <dependency>

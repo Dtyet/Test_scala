@@ -7,8 +7,16 @@ import org.apache.spark.{SparkConf, SparkContext}
   * @author Dayet
   * @date 2019/7/18 21:02
   * @version 1.0
+  *
   */
+
 object Mypersist {
+  /**
+    * import scala.annotation.meta.param
+    * @param
+    * @exception
+    *
+    * */
   def main(args: Array[String]): Unit = {
     val conf = new SparkConf().setAppName("chche").setMaster("local[1]")
     val sc = new SparkContext()
