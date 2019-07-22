@@ -19,11 +19,28 @@ object Myrdd {
       * */
 //    val rdd1 = sc.parallelize(Array(1,2,3,4),4)
 //    val rdd2 = sc.makeRDD(Array((1,2),(3,4),(5,6)),3)
-//    val rdd3 = sc.textFile("")
-    val rdd4 = sc.parallelize(Array(("a","q"),("b","w"),("c","e")))
-    val rdd5 = sc.parallelize(Array(("a",1),("b",2),("d",3)))
+    val rdd3 = sc.textFile("./words")
+    val rdd4 = sc.parallelize(Array("a","b","c","d","e","f","g","a"),3)
+    rdd4.mapPartitions(iter=>{
+      print("aaa")
+      iter
+
+    },true).collect()
+    rdd4.distinct().foreach(print)
+//    rdd4.foreach(print)
+//    rdd4.foreachPartition(p=>{
+//      p.foreach(print)
+//    })
+//    rdd4.map()
+//    rdd4.mapPartitions()
+//    val rdd4 = sc.parallelize(Array(("a","q"),("b","w"),("c","e")))
+//    val rdd6 = sc.parallelize(Array(("a","r"),("b","t"),("c","y")))
+//    val rdd5 = sc.parallelize(Array(("a",1),("b",2),("d",3)))
 //    val tp = rdd4.join(rdd5).foreach(print)
-    rdd4.subtract(rdd5)
+//    rdd4.subtract(rdd6)
+//    rdd4.intersection(rdd6)
+//    //将俩个RDD的Key合并，每个RDD的可以对应一个value
+//    rdd4.cogroup(rdd6)
 
     sc.stop()
   }
