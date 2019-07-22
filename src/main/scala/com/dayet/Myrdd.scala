@@ -22,7 +22,8 @@ object Myrdd {
 //    val rdd3 = sc.textFile("")
     val rdd4 = sc.parallelize(Array(("a","q"),("b","w"),("c","e")))
     val rdd5 = sc.parallelize(Array(("a",1),("b",2),("d",3)))
-    val tp = rdd4.join(rdd5).foreach(print)
+//    val tp = rdd4.join(rdd5).foreach(print)
+    rdd4.subtract(rdd5)
 
     sc.stop()
   }
